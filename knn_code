@@ -1,0 +1,77 @@
+l1 = [0,100,350,700,900,1400]
+w1 = [0,60,280,560,880,1300]
+# 0,1 - Shop
+# 2,3 - House
+# 4,5 - Mall
+a = []
+b = []
+avg_diff=[]
+l = int(input('Enter the length: '))
+w = int(input('Enter the width: '))
+
+for i in range(len(l1)):
+    ld = abs(l-l1[i])
+    a.append(ld)
+    wd = abs(w-w1[i])
+    b.append(wd)
+print(a)
+print(b)
+def avg_of_pair(x,y):
+    for i in range(len(l1)):
+        avg = (a[i] + b[i])/2
+        avg_diff.append(avg)
+    return avg_diff
+x= avg_of_pair(a,b)
+print("The means of diffrence pairs is ",x)
+y = sorted(x)
+print('The sorted means of pairs are: ',y)
+
+s1 = y[0]
+s2 = y[1]
+s3 = y[2]
+
+i1 = x.index(s1)
+i2 = x.index(s2)
+i3 = x.index(s3)
+
+print(i1,i2,i3)
+
+
+def identify(i1,i2,i3):
+    li = [i1,i2,i3]
+#     if i1 == i2 and i2 == i3 :
+#         idd = i1
+#     elif i1 == i2 :
+#         idd = i1
+#     elif i2 == i3 :
+#         idd = i2 
+#     else:
+#         print("HaHa !Try with more k ")
+#         idd = 10
+#     return idd
+    # class 1 range is 0:1
+    # chck if i1 is class 1 or ..
+    if i1<2:
+        class1 = 0
+    elif i1>=2 and i1<4:
+        class1 = 1
+    elif i1 >=4 and i1 <5:
+        class1 = 2
+    
+   
+    return class1,class2,class3
+
+    
+
+v_id = identify(i1,i2,i3)
+print(v_id)
+# def final_name(v_id):
+#     if v_id == 0 or v_id == 1:
+#         print('It is a Shop')
+#     elif v_id == 2 or v_id == 3:
+#         print('It is a House')
+#     elif v_id == 4 or v_id == 5:
+#         print('It is a Mall')
+
+# final_name(v_id)
+    
